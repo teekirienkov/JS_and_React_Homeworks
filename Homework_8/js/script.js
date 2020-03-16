@@ -26,16 +26,20 @@ let startBtn = document.getElementById("start"),
 
 let money, time;
 
-function start() {
-    money = +prompt ("Ваш бюджет на месяц?", "");
+startBtn.addEventListener('click', function(){
     time = prompt ("Введите дату в формате YYYY-MM-DD", "");
-
+    money = +prompt ("Ваш бюджет на месяц?", "");
+    
     while (isNaN(money) || money == "" || money == null) {
         money = +prompt ("Ваш бюджет на месяц?", ""); 
     }
-
-}
-start();
+    appData.budget = money;
+    appData.timeData = time;
+    budgetValue.textContent = money.toFixed();
+    yearValue.value = new Date(Date.parse(time)).getFullYear();
+    monthValue.value = new Date(Date.parse(time)).getMonth() + 1;
+    dayValue.value = new Date(Date.parse(time)).getDate();
+});
 
 let appData = {
     budget: money,

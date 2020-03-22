@@ -28,9 +28,9 @@ window.addEventListener('DOMContentLoaded', () => {
         let target = event.target;
         if (target && target.classList.contains('info-header-tab')) {     // Проверка что клик был на один из табов
             for (let i = 0; i < tab.length; i++) {        // Цикл работает пока не проверит все табы (tab.length)
-                if (target == tab[i]) {              
-                    hideTabContent(0);            // Это условие выводит нужный таб
-                    showTabContent(i);
+                if (target == tab[i]) {              // Это условие выводит нужный таб
+                    hideTabContent(0);             // Функция скрывает все табы 
+                    showTabContent(i);             // Функция выводит нужный таб! 
                     break;
                 }
             }

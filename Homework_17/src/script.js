@@ -1,8 +1,17 @@
 $(document).ready(function() {
-	let overlay = $('.overlay'),
-    	modal = $('.modal'),
-    	btnClose = $('.close'),
-    	btnSelect = $('.main_btna'), // Выбрать тур
-    	btnAdvice = $('.main_btn'), // Получить консультацию
-    	btnTimetable = $('.timetable'); // Расписание туров
+	
+	$(document).ready(function() {
+
+    $('.main_btna, .main_btn, a[href="#sheldure"]').click(function() {
+        $('.overlay').fadeIn(1000);
+        $('.modal').slideDown(1000);
+    });
+
+    $('.close').click(function() {
+        $('.modal').slideUp(1000);
+        $('.overlay').fadeOut(1000);
+    });
+
+});
+	
 });
